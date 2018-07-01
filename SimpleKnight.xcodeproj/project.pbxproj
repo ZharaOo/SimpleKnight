@@ -21,6 +21,7 @@
 		DFA5FFCE20E81183001DB877 /* CollectGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA5FFCD20E81183001DB877 /* CollectGameViewController.swift */; };
 		DFA5FFD020E811A2001DB877 /* CollectFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA5FFCF20E811A2001DB877 /* CollectFieldView.swift */; };
 		DFA5FFD220E811B3001DB877 /* CollectGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA5FFD120E811B3001DB877 /* CollectGame.swift */; };
+		DFA5FFD520E8ED61001DB877 /* GameDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA5FFD420E8ED61001DB877 /* GameDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		DFA5FFCD20E81183001DB877 /* CollectGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectGameViewController.swift; sourceTree = "<group>"; };
 		DFA5FFCF20E811A2001DB877 /* CollectFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectFieldView.swift; sourceTree = "<group>"; };
 		DFA5FFD120E811B3001DB877 /* CollectGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectGame.swift; sourceTree = "<group>"; };
+		DFA5FFD420E8ED61001DB877 /* GameDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				DFA5FFC220E7A697001DB877 /* FieldView.swift */,
 				DFA5FFC820E7F733001DB877 /* Knight.swift */,
 				DFA5FFCA20E804FB001DB877 /* Score.swift */,
+				DFA5FFD420E8ED61001DB877 /* GameDelegate.swift */,
 				DFA5FFD320E811BD001DB877 /* CollectGame */,
 				DFA5FFCC20E81162001DB877 /* ClassicGame */,
 				DFA5FFB220E7A52D001DB877 /* Main.storyboard */,
@@ -184,6 +187,7 @@
 				DFA5FFCE20E81183001DB877 /* CollectGameViewController.swift in Sources */,
 				DFA5FFD220E811B3001DB877 /* CollectGame.swift in Sources */,
 				DFA5FFD020E811A2001DB877 /* CollectFieldView.swift in Sources */,
+				DFA5FFD520E8ED61001DB877 /* GameDelegate.swift in Sources */,
 				DFA5FFC320E7A697001DB877 /* FieldView.swift in Sources */,
 				DFA5FFC120E7A67A001DB877 /* ClassicGameViewController.swift in Sources */,
 				DFA5FFC720E7C4B4001DB877 /* ClassicFieldView.swift in Sources */,
