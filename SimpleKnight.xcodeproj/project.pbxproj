@@ -12,6 +12,15 @@
 		DFA5FFB420E7A52D001DB877 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFA5FFB220E7A52D001DB877 /* Main.storyboard */; };
 		DFA5FFB620E7A52E001DB877 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFA5FFB520E7A52E001DB877 /* Assets.xcassets */; };
 		DFA5FFB920E7A52E001DB877 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFA5FFB720E7A52E001DB877 /* LaunchScreen.storyboard */; };
+		DFA5FFC120E7A67A001DB877 /* ClassicGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA5FFC020E7A67A001DB877 /* ClassicGameViewController.swift */; };
+		DFA5FFC320E7A697001DB877 /* FieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA5FFC220E7A697001DB877 /* FieldView.swift */; };
+		DFA5FFC520E7B87C001DB877 /* ClassicGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA5FFC420E7B87C001DB877 /* ClassicGame.swift */; };
+		DFA5FFC720E7C4B4001DB877 /* ClassicFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA5FFC620E7C4B4001DB877 /* ClassicFieldView.swift */; };
+		DFA5FFC920E7F733001DB877 /* Knight.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA5FFC820E7F733001DB877 /* Knight.swift */; };
+		DFA5FFCB20E804FB001DB877 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA5FFCA20E804FB001DB877 /* Score.swift */; };
+		DFA5FFCE20E81183001DB877 /* CollectGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA5FFCD20E81183001DB877 /* CollectGameViewController.swift */; };
+		DFA5FFD020E811A2001DB877 /* CollectFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA5FFCF20E811A2001DB877 /* CollectFieldView.swift */; };
+		DFA5FFD220E811B3001DB877 /* CollectGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA5FFD120E811B3001DB877 /* CollectGame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +31,15 @@
 		DFA5FFB520E7A52E001DB877 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DFA5FFB820E7A52E001DB877 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DFA5FFBA20E7A52E001DB877 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFA5FFC020E7A67A001DB877 /* ClassicGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicGameViewController.swift; sourceTree = "<group>"; };
+		DFA5FFC220E7A697001DB877 /* FieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldView.swift; sourceTree = "<group>"; };
+		DFA5FFC420E7B87C001DB877 /* ClassicGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicGame.swift; sourceTree = "<group>"; };
+		DFA5FFC620E7C4B4001DB877 /* ClassicFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicFieldView.swift; sourceTree = "<group>"; };
+		DFA5FFC820E7F733001DB877 /* Knight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Knight.swift; sourceTree = "<group>"; };
+		DFA5FFCA20E804FB001DB877 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
+		DFA5FFCD20E81183001DB877 /* CollectGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectGameViewController.swift; sourceTree = "<group>"; };
+		DFA5FFCF20E811A2001DB877 /* CollectFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectFieldView.swift; sourceTree = "<group>"; };
+		DFA5FFD120E811B3001DB877 /* CollectGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,12 +74,37 @@
 			children = (
 				DFA5FFAE20E7A52D001DB877 /* AppDelegate.swift */,
 				DFA5FFB020E7A52D001DB877 /* StartViewController.swift */,
+				DFA5FFC220E7A697001DB877 /* FieldView.swift */,
+				DFA5FFC820E7F733001DB877 /* Knight.swift */,
+				DFA5FFCA20E804FB001DB877 /* Score.swift */,
+				DFA5FFD320E811BD001DB877 /* CollectGame */,
+				DFA5FFCC20E81162001DB877 /* ClassicGame */,
 				DFA5FFB220E7A52D001DB877 /* Main.storyboard */,
 				DFA5FFB520E7A52E001DB877 /* Assets.xcassets */,
 				DFA5FFB720E7A52E001DB877 /* LaunchScreen.storyboard */,
 				DFA5FFBA20E7A52E001DB877 /* Info.plist */,
 			);
 			path = SimpleKnight;
+			sourceTree = "<group>";
+		};
+		DFA5FFCC20E81162001DB877 /* ClassicGame */ = {
+			isa = PBXGroup;
+			children = (
+				DFA5FFC020E7A67A001DB877 /* ClassicGameViewController.swift */,
+				DFA5FFC620E7C4B4001DB877 /* ClassicFieldView.swift */,
+				DFA5FFC420E7B87C001DB877 /* ClassicGame.swift */,
+			);
+			path = ClassicGame;
+			sourceTree = "<group>";
+		};
+		DFA5FFD320E811BD001DB877 /* CollectGame */ = {
+			isa = PBXGroup;
+			children = (
+				DFA5FFCD20E81183001DB877 /* CollectGameViewController.swift */,
+				DFA5FFCF20E811A2001DB877 /* CollectFieldView.swift */,
+				DFA5FFD120E811B3001DB877 /* CollectGame.swift */,
+			);
+			path = CollectGame;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +179,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFA5FFB120E7A52D001DB877 /* StartViewController.swift in Sources */,
+				DFA5FFC520E7B87C001DB877 /* ClassicGame.swift in Sources */,
+				DFA5FFCB20E804FB001DB877 /* Score.swift in Sources */,
+				DFA5FFCE20E81183001DB877 /* CollectGameViewController.swift in Sources */,
+				DFA5FFD220E811B3001DB877 /* CollectGame.swift in Sources */,
+				DFA5FFD020E811A2001DB877 /* CollectFieldView.swift in Sources */,
+				DFA5FFC320E7A697001DB877 /* FieldView.swift in Sources */,
+				DFA5FFC120E7A67A001DB877 /* ClassicGameViewController.swift in Sources */,
+				DFA5FFC720E7C4B4001DB877 /* ClassicFieldView.swift in Sources */,
 				DFA5FFAF20E7A52D001DB877 /* AppDelegate.swift in Sources */,
+				DFA5FFC920E7F733001DB877 /* Knight.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

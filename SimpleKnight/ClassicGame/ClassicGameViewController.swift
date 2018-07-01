@@ -18,6 +18,10 @@ class ClassicGameViewController: UIViewController, ClassicGameDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        movesLabel.layer.masksToBounds = true
+        scoreLabel.layer.masksToBounds = true
+        movesLabel.layer.cornerRadius = 8.0
+        scoreLabel.layer.cornerRadius = 8.0
         startGame()
     }
     
