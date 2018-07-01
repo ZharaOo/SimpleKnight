@@ -23,7 +23,8 @@ class FinishView: UIView {
         fv.backgroundColor = UIColor.init(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.8)
         
         fv.scoreLabel.text = "Score: \(score) \n\nBest: \(bestScore)"
-        
+        fv.scoreLabel.layer.masksToBounds = true
+        fv.scoreLabel.layer.cornerRadius = 30.0
         return fv
     }
     
