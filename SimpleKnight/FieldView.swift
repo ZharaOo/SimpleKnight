@@ -15,7 +15,6 @@ protocol FieldViewDelegate: class {
 internal class CellButton: UIButton {
     var occupied = false
     var score: Int = 0
-    var delegate: FieldViewDelegate!
     
     var location: CGPoint {
         return CGPoint(x: self.frame.minX / self.frame.width, y: self.frame.minY / self.frame.height)
