@@ -9,10 +9,16 @@
 import UIKit
 
 class Knight: NSObject {
-    @objc private(set) dynamic var location: CGPoint = CGPoint(x: -1, y: -1)
+    private(set) var location: CGPoint!
+    
+    override init() {}
+    
+    init(location: CGPoint) {
+        self.location = location
+    }
     
     func canMakeMove(to location:CGPoint) -> Bool {
-        if self.location == CGPoint(x: -1, y: -1) {
+        if self.location == nil {
             return true
         }
         
