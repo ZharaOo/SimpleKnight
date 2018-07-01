@@ -26,7 +26,7 @@ class ClassicGame: NSObject, FieldViewDelegate {
     func moveMade(score: Int) {
         self.score += score
         self.moves += 1
-        delegate.moveMade()
+        delegate.updateLabels()
         
         if !field.canFigureMove() {
             finish()

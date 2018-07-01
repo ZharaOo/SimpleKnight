@@ -10,5 +10,5 @@ import Foundation
 
 protocol GameDelegate: class {
     func finishGame()
-    func moveMade()
+    func updateLabels()
 }

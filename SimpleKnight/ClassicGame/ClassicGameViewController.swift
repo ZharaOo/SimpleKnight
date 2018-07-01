@@ -29,11 +29,10 @@ class ClassicGameViewController: UIViewController, GameDelegate {
         game = ClassicGame(field: field)
         game.delegate = self
         
-        movesLabel.text = "Moves: \(game!.moves)"
-        scoreLabel.text = "Score: \(game!.score)"
+        updateLabels()
     }
     
-    func moveMade() {
+    func updateLabels() {
         movesLabel.text = "Moves: \(game!.moves)"
         scoreLabel.text = "Score: \(game!.score)"
     }
