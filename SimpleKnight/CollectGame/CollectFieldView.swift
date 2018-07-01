@@ -8,16 +8,24 @@
 
 import UIKit
 
+protocol ClassicFieldViewDelegate: class {
+    func moveMade(score: Int, collected: Bool)
+}
+
 class CollectFieldView: FieldView {
-    weak var delegate: FieldViewDelegate!
+    weak var delegate: ClassicFieldViewDelegate!
     
     var enemies = [CGPoint]()
     var collectPoint = CGPoint(x: 0, y: 0)
     
-    override func awakeFromNib() {
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
         figure = Knight(location: CGPoint(x: 0, y: 0))
         buttons[CellButton.indexOf(figure.location)].occupied = true
+        buttons[CellButton.indexOf(figure.location)].setBackgroundImage(UIImage(named: "KnightImage"), for: .normal)
         setCollectPointAndEnemies()
+        buttons.forEach() { $0.setScore() }
     }
     
     override func buttonPressed(_ sender: CellButton) {
@@ -25,24 +33,25 @@ class CollectFieldView: FieldView {
             buttons[CellButton.indexOf(figure.location)].occupied = false
             buttons[CellButton.indexOf(figure.location)].setBackgroundImage(UIImage(), for: .normal)
             figure.move(to: sender.location)
-            buttons[CellButton.indexOf(figure.location)].setBackgroundImage(UIImage(named: "KnightImage"), for: .normal)
-            buttons[CellButton.indexOf(figure.location)].occupied = true
             
             if sender.occupied {
                 if sender.location == collectPoint {
-                    delegate.moveMade(score: 200)
+                    delegate.moveMade(score: 200, collected: true)
                     
                     setCollectPointAndEnemies()
                     buttons.forEach() { $0.setScore() }
                 }
-                else if enemies.contains(sender.location) {
-                    delegate.moveMade(score: -200)
+                else if enemies.contains(where: {$0.x == sender.location.x && $0.y == sender.location.y}) {
+                    delegate.moveMade(score: -200, collected: false)
                 }
             }
             else {
-                sender.occupied = true
-                delegate.moveMade(score: sender.score - 50)
+                delegate.moveMade(score: sender.score - 50, collected: false)
             }
+            
+            buttons[CellButton.indexOf(figure.location)].setBackgroundImage(UIImage(named: "KnightImage"), for: .normal)
+            buttons[CellButton.indexOf(figure.location)].occupied = true
+
         }
     }
     
@@ -59,7 +68,7 @@ class CollectFieldView: FieldView {
         }
         
         self.collectPoint = collectPoint
-        buttons[CellButton.indexOf(self.collectPoint)].setBackgroundImage(UIImage(named: "EnemyImage"), for: .normal)
+        buttons[CellButton.indexOf(self.collectPoint)].setBackgroundImage(UIImage(named: "CollectImage"), for: .normal)
         buttons[CellButton.indexOf(self.collectPoint)].occupied = true
     }
     
@@ -70,7 +79,7 @@ class CollectFieldView: FieldView {
         
         for _ in 0...numberOfEnemies {
             var enemyLocation = CGPoint(x: Int(arc4random() % 8), y: Int(arc4random() % 8))
-            while enemyLocation == figureLocarion || enemyLocation == collectPointLocation || hEnemies.contains(enemyLocation) {
+            while enemyLocation == figureLocarion || enemyLocation == collectPointLocation || hEnemies.contains(where: {$0.x == enemyLocation.x && $0.y == enemyLocation.y}) {
                 enemyLocation = CGPoint(x: Int(arc4random() % 8), y: Int(arc4random() % 8))
             }
             
