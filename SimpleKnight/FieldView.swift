@@ -9,7 +9,7 @@
 import UIKit
 
 internal class CellButton: UIButton {
-    var past = false
+    var occupied = false
     var score: Int = 0
     
     var location: CGPoint {
@@ -17,7 +17,7 @@ internal class CellButton: UIButton {
     }
     
     func setScore() {
-        if !past {
+        if !occupied {
             self.setBackgroundImage(UIImage(), for: .normal)
             
             let probability = arc4random() % 100
@@ -31,6 +31,10 @@ internal class CellButton: UIButton {
         }
         
         score = 50
+    }
+    
+    static func indexOf(_ location: CGPoint) -> Int {
+        return Int(location.x * 8 + location.y)
     }
 }
 

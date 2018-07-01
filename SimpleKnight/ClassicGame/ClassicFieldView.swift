@@ -16,19 +16,19 @@ class ClassicFieldView: FieldView {
     var delegate: ClassicFieldViewDelegate!
     
     override func buttonPressed(_ sender: CellButton) {
-        if figure.canMakeMove(to: sender.location) {
+        if figure.canMakeMove(to: sender.location) && !locationPased(sender.location) {
             figure.move(to: sender.location)
             
             sender.setBackgroundImage(UIImage(named: "KnightImage"), for: .normal)
             
             buttons.forEach() { button in
-                if button.past {
+                if button.occupied {
                     button.setBackgroundImage(UIImage(named: "PastCellImage"), for: .normal)
                 }
             }
             
             delegate.moveMade(score: sender.score)
-            sender.past = true
+            sender.occupied = true
             buttons.forEach() { $0.setScore() }
         }
     }
@@ -52,7 +52,7 @@ class ClassicFieldView: FieldView {
         }
         
         for button in buttons {
-            if button.past && button.location == location {
+            if button.occupied && button.location == location {
                 return true
             }
         }
