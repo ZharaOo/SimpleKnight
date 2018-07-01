@@ -52,15 +52,15 @@
             </objects>
             <point key="canvasLocation" x="1031.25" y="29.577464788732396"/>
         </scene>
-        <!--View Controller-->
+        <!--Collect Game View Controller-->
         <scene sceneID="ThI-uf-PuD">
             <objects>
-                <viewController id="gMj-3Z-tkm" sceneMemberID="viewController">
+                <viewController id="gMj-3Z-tkm" customClass="CollectGameViewController" customModule="SimpleKnight" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MSX-b3-4FX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b8R-fU-saB" customClass="ClassicFieldView" customModule="SimpleKnight" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b8R-fU-saB" customClass="CollectFieldView" customModule="SimpleKnight" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="134" width="320" height="320"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -114,6 +114,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hTG-Pw-I80"/>
                     </view>
+                    <connections>
+                        <outlet property="field" destination="b8R-fU-saB" id="16l-t6-w6l"/>
+                        <outlet property="scoreLabel" destination="By2-xR-H1g" id="O8g-ok-ejn"/>
+                        <outlet property="timeLabel" destination="BXn-y4-V29" id="rMq-wz-hsy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MId-z0-Rcn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
