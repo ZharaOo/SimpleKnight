@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CollectGameViewController: UIViewController, GameDelegate {
+class CollectGameViewController: UIViewController, GameDelegate, FinishViewDelegate {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var field: CollectFieldView!
@@ -35,9 +35,15 @@ class CollectGameViewController: UIViewController, GameDelegate {
         scoreLabel.text = "Score: \(game.score)"
     }
     
+    func goToMainMenu() {
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
     func finishGame() {
-        UIView.animate(withDuration: 1.0) {
-            self.field.hideKnight()
-        }
+        UIView.animate(withDuration: 1.0, animations: { self.field.hideKnight() }, completion: { complete in
+            let finishView = FinishView.instanceFromNib(score: self.game.score, bestScore: 0)
+            finishView.delegate = self
+            self.view.addSubview(finishView)
+        })
     }
 }

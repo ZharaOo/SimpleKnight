@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ClassicGameViewController: UIViewController, GameDelegate {
+class ClassicGameViewController: UIViewController, GameDelegate, FinishViewDelegate {
 
     @IBOutlet weak var field: ClassicFieldView!
     @IBOutlet weak var movesLabel: UILabel!
@@ -37,9 +37,15 @@ class ClassicGameViewController: UIViewController, GameDelegate {
         scoreLabel.text = "Score: \(game!.score)"
     }
     
+    func goToMainMenu() {
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
     func finishGame() {
-        UIView.animate(withDuration: 1.0) {
-            self.field.hideKnight()
-        }
+        UIView.animate(withDuration: 1.0, animations: { self.field.hideKnight() }, completion: { complete in
+            let finishView = FinishView.instanceFromNib(score: self.game.score, bestScore: 0)
+            finishView.delegate = self
+            self.view.addSubview(finishView)
+        })
     }
 }
