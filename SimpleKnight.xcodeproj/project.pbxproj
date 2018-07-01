@@ -22,6 +22,8 @@
 		DFA5FFD020E811A2001DB877 /* CollectFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA5FFCF20E811A2001DB877 /* CollectFieldView.swift */; };
 		DFA5FFD220E811B3001DB877 /* CollectGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA5FFD120E811B3001DB877 /* CollectGame.swift */; };
 		DFA5FFD520E8ED61001DB877 /* GameDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA5FFD420E8ED61001DB877 /* GameDelegate.swift */; };
+		DFA5FFD720E8FE84001DB877 /* FinishView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFA5FFD620E8FE84001DB877 /* FinishView.xib */; };
+		DFA5FFD920E8FF60001DB877 /* FinishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA5FFD820E8FF60001DB877 /* FinishView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		DFA5FFCF20E811A2001DB877 /* CollectFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectFieldView.swift; sourceTree = "<group>"; };
 		DFA5FFD120E811B3001DB877 /* CollectGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectGame.swift; sourceTree = "<group>"; };
 		DFA5FFD420E8ED61001DB877 /* GameDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDelegate.swift; sourceTree = "<group>"; };
+		DFA5FFD620E8FE84001DB877 /* FinishView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FinishView.xib; sourceTree = "<group>"; };
+		DFA5FFD820E8FF60001DB877 /* FinishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,10 +80,11 @@
 			children = (
 				DFA5FFAE20E7A52D001DB877 /* AppDelegate.swift */,
 				DFA5FFB020E7A52D001DB877 /* StartViewController.swift */,
+				DFA5FFD420E8ED61001DB877 /* GameDelegate.swift */,
 				DFA5FFC220E7A697001DB877 /* FieldView.swift */,
 				DFA5FFC820E7F733001DB877 /* Knight.swift */,
 				DFA5FFCA20E804FB001DB877 /* Score.swift */,
-				DFA5FFD420E8ED61001DB877 /* GameDelegate.swift */,
+				DFA5FFDA20E8FF69001DB877 /* Finish */,
 				DFA5FFD320E811BD001DB877 /* CollectGame */,
 				DFA5FFCC20E81162001DB877 /* ClassicGame */,
 				DFA5FFB220E7A52D001DB877 /* Main.storyboard */,
@@ -108,6 +113,15 @@
 				DFA5FFD120E811B3001DB877 /* CollectGame.swift */,
 			);
 			path = CollectGame;
+			sourceTree = "<group>";
+		};
+		DFA5FFDA20E8FF69001DB877 /* Finish */ = {
+			isa = PBXGroup;
+			children = (
+				DFA5FFD820E8FF60001DB877 /* FinishView.swift */,
+				DFA5FFD620E8FE84001DB877 /* FinishView.xib */,
+			);
+			path = Finish;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,6 +185,7 @@
 				DFA5FFB920E7A52E001DB877 /* LaunchScreen.storyboard in Resources */,
 				DFA5FFB620E7A52E001DB877 /* Assets.xcassets in Resources */,
 				DFA5FFB420E7A52D001DB877 /* Main.storyboard in Resources */,
+				DFA5FFD720E8FE84001DB877 /* FinishView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +207,7 @@
 				DFA5FFC120E7A67A001DB877 /* ClassicGameViewController.swift in Sources */,
 				DFA5FFC720E7C4B4001DB877 /* ClassicFieldView.swift in Sources */,
 				DFA5FFAF20E7A52D001DB877 /* AppDelegate.swift in Sources */,
+				DFA5FFD920E8FF60001DB877 /* FinishView.swift in Sources */,
 				DFA5FFC920E7F733001DB877 /* Knight.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
