@@ -8,12 +8,8 @@
 
 import UIKit
 
-protocol ClassicFieldViewDelegate: class {
-    func moveMade(score: Int)
-}
-
 class ClassicFieldView: FieldView {
-    var delegate: ClassicFieldViewDelegate!
+    var delegate: FieldViewDelegate!
     
     override func buttonPressed(_ sender: CellButton) {
         if figure.canMakeMove(to: sender.location) && !locationPased(sender.location) {
