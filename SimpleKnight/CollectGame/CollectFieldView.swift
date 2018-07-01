@@ -29,7 +29,7 @@ class CollectFieldView: FieldView {
     }
     
     override func buttonPressed(_ sender: CellButton) {
-        if figure.canMakeMove(to: sender.location) {
+        if figure.canMakeMove(to: sender.location) && interactionAllowed {
             buttons[CellButton.indexOf(figure.location)].occupied = false
             buttons[CellButton.indexOf(figure.location)].setBackgroundImage(UIImage(), for: .normal)
             figure.move(to: sender.location)

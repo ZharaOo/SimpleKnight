@@ -46,6 +46,7 @@ class FieldView: UIView {
     
     internal var buttons = [CellButton]()
     var initialized = false
+    var interactionAllowed = true
     var figure = Knight()
     
     override func layoutSubviews() {
@@ -90,6 +91,7 @@ class FieldView: UIView {
     }
     
     func hideKnight() {
+        interactionAllowed = false
         buttons[Int(figure.location.x * 8 + figure.location.y)].alpha = 0.0
     }
     

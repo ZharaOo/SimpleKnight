@@ -12,7 +12,7 @@ class ClassicFieldView: FieldView {
     weak var delegate: FieldViewDelegate!
     
     override func buttonPressed(_ sender: CellButton) {
-        if figure.canMakeMove(to: sender.location) && !locationPased(sender.location) {
+        if figure.canMakeMove(to: sender.location) && !locationPased(sender.location) && interactionAllowed {
             figure.move(to: sender.location)
             
             sender.setBackgroundImage(UIImage(named: "KnightImage"), for: .normal)
