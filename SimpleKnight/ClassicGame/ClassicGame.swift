@@ -8,14 +8,9 @@
 
 import UIKit
 
-protocol ClassicGameDelegate: class {
-    func finishGame()
-    func moveMade()
-}
-
-class ClassicGame: NSObject, ClassicFieldViewDelegate {
+class ClassicGame: NSObject, FieldViewDelegate {
     weak var field: ClassicFieldView!
-    weak var delegate: ClassicGameDelegate!
+    weak var delegate: GameDelegate!
     
     var moves = 0
     var score = 0
@@ -30,6 +25,7 @@ class ClassicGame: NSObject, ClassicFieldViewDelegate {
     
     func moveMade(score: Int) {
         self.score += score
+        self.moves += 1
         delegate.moveMade()
         
         if !field.canFigureMove() {

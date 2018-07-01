@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ClassicGameViewController: UIViewController, ClassicGameDelegate {
+class ClassicGameViewController: UIViewController, GameDelegate {
 
     @IBOutlet weak var field: ClassicFieldView!
     @IBOutlet weak var movesLabel: UILabel!
