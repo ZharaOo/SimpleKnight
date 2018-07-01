@@ -18,9 +18,9 @@ class FinishView: UIView {
     weak var delegate: FinishViewDelegate!
     
     class func instanceFromNib(score: Int, bestScore: Int) -> FinishView {
-        let fv = UINib(nibName: "RowView", bundle: nil).instantiate(withOwner: nil, options:nil)[0] as! FinishView
+        let fv = UINib(nibName: "FinishView", bundle: nil).instantiate(withOwner: nil, options:nil)[0] as! FinishView
         fv.frame = CGRect(x: 0.0, y: 0.0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-        fv.backgroundColor = UIColor.init(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.6)
+        fv.backgroundColor = UIColor.init(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.8)
         
         fv.scoreLabel.text = "Score: \(score) \n\nBest: \(bestScore)"
         
