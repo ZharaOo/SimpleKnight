@@ -28,6 +28,7 @@ class CollectGameViewController: UIViewController, GameDelegate, FinishViewDeleg
     override func viewDidLayoutSubviews() {
         if rulesView == nil && !UserDefaults.standard.bool(forKey: "CollectRulesShown") {
             rulesView = RulesView(frame: CGRect(x: 0.0, y: field.frame.maxY, width: view.frame.width, height: view.frame.height - field.frame.maxY))
+            rulesView.setText(text: "Collect as many red chips as you can. Better not to step on cross cell.")
             view.addSubview(rulesView)
         }
     }
@@ -42,12 +43,12 @@ class CollectGameViewController: UIViewController, GameDelegate, FinishViewDeleg
         timeLabel.text = "Time: \(game.time)"
         scoreLabel.text = "Score: \(game.score)"
         
-        if !UserDefaults.standard.bool(forKey: "ClassicRulesShown") {
+        if !UserDefaults.standard.bool(forKey: "CollectRulesShown") {
             switch game!.score {
             case 0:
-                rulesView.setText(text: "Collect as many red chips as you can. Better not to step on cross cell.")
+                break
             default:
-                UserDefaults.standard.set(true, forKey: "RulesShown")
+                UserDefaults.standard.set(true, forKey: "CollectRulesShown")
                 rulesView.removeFromSuperview()
             }
         }

@@ -29,6 +29,7 @@ class ClassicGameViewController: UIViewController, GameDelegate, FinishViewDeleg
     override func viewDidLayoutSubviews() {
         if rulesView == nil && !UserDefaults.standard.bool(forKey: "ClassicRulesShown") {
             rulesView = RulesView(frame: CGRect(x: 0.0, y: field.frame.maxY, width: view.frame.width, height: view.frame.height - field.frame.maxY))
+            rulesView.setText(text: "Tap on any cell to place a knight.")
             view.addSubview(rulesView)
         }
     }
@@ -47,13 +48,13 @@ class ClassicGameViewController: UIViewController, GameDelegate, FinishViewDeleg
         if !UserDefaults.standard.bool(forKey: "ClassicRulesShown") {
             switch game!.moves {
             case 0:
-                rulesView.setText(text: "Tap on any cell to place a knight.")
+                break
             case 1:
                 rulesView.setText(text: "Move knight like a chess knight.")
             case 2:
                 rulesView.setText(text: "Your goal is to fill all field's cells. You can not step on the same cell twice. Good luck!")
             default:
-                UserDefaults.standard.set(true, forKey: "RulesShown")
+                UserDefaults.standard.set(true, forKey: "ClassicRulesShown")
                 rulesView.removeFromSuperview()
             }
         }
