@@ -16,7 +16,7 @@ class CollectFieldView: FieldView {
     weak var delegate: ClassicFieldViewDelegate!
     
     var enemies = [CGPoint]()
-    var collectPoint = CGPoint(x: 0, y: 0)
+    var collectPoint = CGPoint(x: 7, y: 7)
     
     override func layoutSubviews() {
         super.layoutSubviews()
