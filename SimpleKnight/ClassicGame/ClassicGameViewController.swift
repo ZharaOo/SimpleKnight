@@ -15,6 +15,7 @@ class ClassicGameViewController: UIViewController, GameDelegate, FinishViewDeleg
     @IBOutlet weak var scoreLabel: UILabel!
     
     var game: ClassicGame!
+    var rulesView: RulesView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,13 @@ class ClassicGameViewController: UIViewController, GameDelegate, FinishViewDeleg
         movesLabel.layer.cornerRadius = 8.0
         scoreLabel.layer.cornerRadius = 8.0
         startGame()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        if rulesView == nil && !UserDefaults.standard.bool(forKey: "ClassicRulesShown") {
+            rulesView = RulesView(frame: CGRect(x: 0.0, y: field.frame.maxY, width: view.frame.width, height: view.frame.height - field.frame.maxY))
+            view.addSubview(rulesView)
+        }
     }
     
     func startGame() {
@@ -35,6 +43,20 @@ class ClassicGameViewController: UIViewController, GameDelegate, FinishViewDeleg
     func updateLabels() {
         movesLabel.text = "Moves: \(game!.moves)"
         scoreLabel.text = "Score: \(game!.score)"
+        
+        if !UserDefaults.standard.bool(forKey: "ClassicRulesShown") {
+            switch game!.moves {
+            case 0:
+                rulesView.setText(text: "Tap on any cell to place a knight.")
+            case 1:
+                rulesView.setText(text: "Move knight like a chess knight.")
+            case 2:
+                rulesView.setText(text: "Your goal is to fill all field's cells. You can not step on the same cell twice. Good luck!")
+            default:
+                UserDefaults.standard.set(true, forKey: "RulesShown")
+                rulesView.removeFromSuperview()
+            }
+        }
     }
     
     func goToMainMenu() {

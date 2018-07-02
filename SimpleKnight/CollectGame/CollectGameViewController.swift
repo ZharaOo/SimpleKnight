@@ -14,6 +14,7 @@ class CollectGameViewController: UIViewController, GameDelegate, FinishViewDeleg
     @IBOutlet weak var field: CollectFieldView!
     
     var game: CollectGame!
+    var rulesView: RulesView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,13 @@ class CollectGameViewController: UIViewController, GameDelegate, FinishViewDeleg
         timeLabel.layer.cornerRadius = 8.0
         scoreLabel.layer.cornerRadius = 8.0
         startGame()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        if rulesView == nil && !UserDefaults.standard.bool(forKey: "CollectRulesShown") {
+            rulesView = RulesView(frame: CGRect(x: 0.0, y: field.frame.maxY, width: view.frame.width, height: view.frame.height - field.frame.maxY))
+            view.addSubview(rulesView)
+        }
     }
     
     func startGame() {
@@ -33,6 +41,16 @@ class CollectGameViewController: UIViewController, GameDelegate, FinishViewDeleg
     func updateLabels() {
         timeLabel.text = "Time: \(game.time)"
         scoreLabel.text = "Score: \(game.score)"
+        
+        if !UserDefaults.standard.bool(forKey: "ClassicRulesShown") {
+            switch game!.score {
+            case 0:
+                rulesView.setText(text: "Collect as many red chips as you can. Better not to step on cross cell.")
+            default:
+                UserDefaults.standard.set(true, forKey: "RulesShown")
+                rulesView.removeFromSuperview()
+            }
+        }
     }
     
     func goToMainMenu() {
