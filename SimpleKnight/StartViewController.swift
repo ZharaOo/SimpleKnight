@@ -8,6 +8,14 @@
 
 import UIKit
 
+class MenuButton: UIButton {
+    override func draw(_ rect: CGRect) {
+        self.layer.borderWidth = 1
+        self.layer.borderColor = UIColor.black.cgColor
+        self.setTitleColor(.black, for: .normal)
+    }
+}
+
 class StartViewController: UIViewController {
 
     override func viewDidLoad() {

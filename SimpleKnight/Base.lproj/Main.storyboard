@@ -19,31 +19,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Simple Knight" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCE-Xf-stx">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Simple Knight" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCE-Xf-stx">
                                 <rect key="frame" x="31" y="52" width="258" height="97"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="97" id="uYg-U2-DLr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="43"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4cM-vb-spz">
-                                <rect key="frame" x="114" y="217" width="92" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Classic mode"/>
-                                <connections>
-                                    <segue destination="yuf-sT-0vu" kind="show" id="1Bh-0U-SnA"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P1O-ez-chm">
-                                <rect key="frame" x="114" y="317" width="91" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P1O-ez-chm" customClass="MenuButton" customModule="SimpleKnight" customModuleProvider="target">
+                                <rect key="frame" x="166" y="400" width="138" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Collect mode"/>
                                 <connections>
                                     <segue destination="gMj-3Z-tkm" kind="show" id="EPr-f1-DKN"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoImage" translatesAutoresizingMaskIntoConstraints="NO" id="BZA-F5-GyH">
+                                <rect key="frame" x="60" y="174" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="BZA-F5-GyH" secondAttribute="height" multiplier="1:1" id="hQF-7y-Nk9"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4cM-vb-spz" customClass="MenuButton" customModule="SimpleKnight" customModuleProvider="target">
+                                <rect key="frame" x="16" y="400" width="138" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Classic mode"/>
+                                <connections>
+                                    <segue destination="yuf-sT-0vu" kind="show" id="1Bh-0U-SnA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nel-MA-abZ">
+                                <rect key="frame" x="264" y="508" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <state key="normal" backgroundImage="RulesImage"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.82352941180000006" green="0.74509803919999995" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="tCE-Xf-stx" firstAttribute="centerX" secondItem="BZA-F5-GyH" secondAttribute="centerX" id="3QC-k2-gsX"/>
+                            <constraint firstItem="BZA-F5-GyH" firstAttribute="top" secondItem="tCE-Xf-stx" secondAttribute="bottom" constant="7" id="GtB-1G-2xA">
+                                <variation key="heightClass=regular-widthClass=compact" constant="25"/>
+                            </constraint>
+                            <constraint firstItem="tCE-Xf-stx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="QpQ-Mg-W3x"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BZA-F5-GyH" secondAttribute="trailing" constant="60" id="bjG-0Y-9sg"/>
+                            <constraint firstItem="BZA-F5-GyH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="sU5-Q7-YBw"/>
+                            <constraint firstItem="BZA-F5-GyH" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="t4G-Wf-whc"/>
+                            <constraint firstItem="tCE-Xf-stx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="31" id="vUk-dv-TTB"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="Guy-6e-77t"/>
@@ -216,6 +240,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="LogoImage" width="300" height="300"/>
         <image name="PauseImage" width="40" height="40"/>
+        <image name="RulesImage" width="40" height="40"/>
     </resources>
 </document>

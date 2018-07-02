@@ -24,6 +24,7 @@
 		DFA5FFD520E8ED61001DB877 /* GameDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA5FFD420E8ED61001DB877 /* GameDelegate.swift */; };
 		DFA5FFD720E8FE84001DB877 /* FinishView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFA5FFD620E8FE84001DB877 /* FinishView.xib */; };
 		DFA5FFD920E8FF60001DB877 /* FinishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA5FFD820E8FF60001DB877 /* FinishView.swift */; };
+		DFA5FFDC20EAA92D001DB877 /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA5FFDB20EAA92D001DB877 /* RulesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		DFA5FFD420E8ED61001DB877 /* GameDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDelegate.swift; sourceTree = "<group>"; };
 		DFA5FFD620E8FE84001DB877 /* FinishView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FinishView.xib; sourceTree = "<group>"; };
 		DFA5FFD820E8FF60001DB877 /* FinishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishView.swift; sourceTree = "<group>"; };
+		DFA5FFDB20EAA92D001DB877 /* RulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				DFA5FFC220E7A697001DB877 /* FieldView.swift */,
 				DFA5FFC820E7F733001DB877 /* Knight.swift */,
 				DFA5FFCA20E804FB001DB877 /* Score.swift */,
+				DFA5FFDB20EAA92D001DB877 /* RulesView.swift */,
 				DFA5FFDA20E8FF69001DB877 /* Finish */,
 				DFA5FFD320E811BD001DB877 /* CollectGame */,
 				DFA5FFCC20E81162001DB877 /* ClassicGame */,
@@ -196,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFA5FFDC20EAA92D001DB877 /* RulesView.swift in Sources */,
 				DFA5FFB120E7A52D001DB877 /* StartViewController.swift in Sources */,
 				DFA5FFC520E7B87C001DB877 /* ClassicGame.swift in Sources */,
 				DFA5FFCB20E804FB001DB877 /* Score.swift in Sources */,
