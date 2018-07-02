@@ -36,12 +36,6 @@
                                     <segue destination="gMj-3Z-tkm" kind="show" id="EPr-f1-DKN"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoImage" translatesAutoresizingMaskIntoConstraints="NO" id="BZA-F5-GyH">
-                                <rect key="frame" x="60" y="174" width="200" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="BZA-F5-GyH" secondAttribute="height" multiplier="1:1" id="hQF-7y-Nk9"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4cM-vb-spz" customClass="MenuButton" customModule="SimpleKnight" customModuleProvider="target">
                                 <rect key="frame" x="16" y="400" width="138" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
@@ -55,16 +49,22 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <state key="normal" backgroundImage="RulesImage"/>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoImage" translatesAutoresizingMaskIntoConstraints="NO" id="BZA-F5-GyH">
+                                <rect key="frame" x="85" y="184" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="BZA-F5-GyH" secondAttribute="height" multiplier="1:1" id="hQF-7y-Nk9"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.82352941180000006" green="0.74509803919999995" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="tCE-Xf-stx" firstAttribute="centerX" secondItem="BZA-F5-GyH" secondAttribute="centerX" id="3QC-k2-gsX"/>
-                            <constraint firstItem="BZA-F5-GyH" firstAttribute="top" secondItem="tCE-Xf-stx" secondAttribute="bottom" constant="7" id="GtB-1G-2xA">
-                                <variation key="heightClass=regular-widthClass=compact" constant="25"/>
+                            <constraint firstItem="BZA-F5-GyH" firstAttribute="top" secondItem="tCE-Xf-stx" secondAttribute="bottom" constant="15" id="GtB-1G-2xA">
+                                <variation key="heightClass=regular-widthClass=compact" constant="35"/>
                             </constraint>
                             <constraint firstItem="tCE-Xf-stx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="QpQ-Mg-W3x"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BZA-F5-GyH" secondAttribute="trailing" constant="60" id="bjG-0Y-9sg"/>
-                            <constraint firstItem="BZA-F5-GyH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="sU5-Q7-YBw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BZA-F5-GyH" secondAttribute="trailing" constant="85" id="bjG-0Y-9sg"/>
+                            <constraint firstItem="BZA-F5-GyH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="85" id="sU5-Q7-YBw"/>
                             <constraint firstItem="BZA-F5-GyH" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="t4G-Wf-whc"/>
                             <constraint firstItem="tCE-Xf-stx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="31" id="vUk-dv-TTB"/>
                         </constraints>
@@ -75,6 +75,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1031.25" y="29.577464788732396"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Lo2-NS-ygp">
+            <objects>
+                <viewController id="RRv-u8-SIc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wNX-pp-fZ1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IPF-9t-rD2">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="SYX-J8-Q2l">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <string key="text">Click on a cell to place a chip and start the game. Now make a move, clicking on that cell in which you want to come. You can only make moves like a chess knight.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XQe-Fj-v6Y">
+                                        <rect key="frame" x="0.0" y="316" width="320" height="188"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <string key="text">In classic mode your goal is to visit every cell in the field. The shorter is the time for which you do, the more is you score. Fill all cells to expand this game mode.  In collect mode your goal is to collect as many blue chips as you can.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.82352941180000006" green="0.74509803919999995" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="O86-HL-nI5"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yTV-lm-tYJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1038.75" y="729.92957746478874"/>
         </scene>
         <!--Collect Game View Controller-->
         <scene sceneID="ThI-uf-PuD">
