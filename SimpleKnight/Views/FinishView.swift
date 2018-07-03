@@ -25,6 +25,7 @@ class FinishView: UIView {
         fv.scoreLabel.text = "Score: \(score) \n\nBest: \(bestScore)"
         fv.scoreLabel.layer.masksToBounds = true
         fv.scoreLabel.layer.cornerRadius = 30.0
+        fv.scoreLabel.adjustsFontSizeToFitWidth = true
         return fv
     }
     
