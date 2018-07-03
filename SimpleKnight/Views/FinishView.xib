@@ -20,7 +20,7 @@
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Fj-cg-mGo">
                     <rect key="frame" x="31" y="363" width="259" height="140"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                     <state key="normal" title="Tap to continue">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
@@ -29,10 +29,14 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: %d  Best: %d" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfm-hd-e7f">
-                    <rect key="frame" x="98" y="110" width="125" height="125"/>
+                    <rect key="frame" x="98" y="130" width="125" height="125"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="125" id="9wU-IO-g8a"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="125" id="Sjb-DH-6LB"/>
+                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="220" id="Y4A-2V-42G"/>
                         <constraint firstAttribute="width" secondItem="rfm-hd-e7f" secondAttribute="height" multiplier="1:1" id="czm-1o-gPp"/>
+                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="220" id="d4q-TV-fX5"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="21"/>
                     <nil key="textColor"/>
@@ -41,9 +45,10 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="rfm-hd-e7f" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="90" id="0Ap-QT-JAn"/>
-                <constraint firstItem="rfm-hd-e7f" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" priority="999" constant="98" id="371-hz-9LJ"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="rfm-hd-e7f" secondAttribute="trailing" priority="999" constant="97" id="UGy-tY-4KZ"/>
+                <constraint firstItem="rfm-hd-e7f" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="110" id="0Ap-QT-JAn"/>
+                <constraint firstItem="rfm-hd-e7f" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" priority="999" constant="98" id="CWK-lI-5wU"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="rfm-hd-e7f" secondAttribute="trailing" priority="999" constant="97" id="GEO-jr-YpF"/>
+                <constraint firstItem="rfm-hd-e7f" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="RmM-Tw-WJx"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
