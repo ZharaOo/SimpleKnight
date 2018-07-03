@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import StoreKit
 
 class MenuButton: UIButton {
     override func draw(_ rect: CGRect) {
@@ -20,6 +21,9 @@ class StartViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if UserDefaults.standard.bool(forKey: "CollectRulesShown") || UserDefaults.standard.bool(forKey: "CollectRulesShown") {
+            SKStoreReviewController.requestReview()
+        }
     }
 }
 

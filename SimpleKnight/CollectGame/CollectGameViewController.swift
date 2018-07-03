@@ -7,14 +7,16 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class CollectGameViewController: UIViewController, GameDelegate, FinishViewDelegate, PauseViewDelegate {
+class CollectGameViewController: UIViewController, GameDelegate, FinishViewDelegate, PauseViewDelegate, GADInterstitialDelegate {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var field: CollectFieldView!
     
     var game: CollectGame!
     var rulesView: RulesView!
+    var interstitial: GADInterstitial?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,11 +78,27 @@ class CollectGameViewController: UIViewController, GameDelegate, FinishViewDeleg
         startGame()
     }
     
+    func createAndLoadInterstitial(id: String) -> GADInterstitial {
+        let interstitial = GADInterstitial(adUnitID: id)
+        interstitial.delegate = self
+        interstitial.load(GADRequest())
+        return interstitial
+    }
+    
+    func interstitialDidReceiveAd(_ ad: GADInterstitial) {
+        interstitial?.present(fromRootViewController: self)
+    }
+    
+    func interstitialWillDismissScreen(_ ad: GADInterstitial) {
+        interstitial = nil
+    }
+    
     func finishGame() {
         UIView.animate(withDuration: 1.0, animations: { self.field.hideKnight() }, completion: { complete in
             let finishView = FinishView.instanceFromNib(score: self.game.score, bestScore: 0)
             finishView.delegate = self
             self.view.addSubview(finishView)
+            self.interstitial = self.createAndLoadInterstitial(id: Google.collectAdID)
         })
     }
 }

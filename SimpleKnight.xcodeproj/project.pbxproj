@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A666588397601C0DA5A8E94A /* Pods_SimpleKnight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A238EF22B91AE2ECCF08AED /* Pods_SimpleKnight.framework */; };
 		DFA5FFAF20E7A52D001DB877 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA5FFAE20E7A52D001DB877 /* AppDelegate.swift */; };
 		DFA5FFB120E7A52D001DB877 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA5FFB020E7A52D001DB877 /* StartViewController.swift */; };
 		DFA5FFB420E7A52D001DB877 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFA5FFB220E7A52D001DB877 /* Main.storyboard */; };
@@ -28,9 +29,12 @@
 		DFA5FFDE20EACD61001DB877 /* RulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA5FFDD20EACD61001DB877 /* RulesViewController.swift */; };
 		DFA5FFE220EAD3B8001DB877 /* PauseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA5FFE120EAD3B8001DB877 /* PauseView.swift */; };
 		DFA5FFE420EAD3C1001DB877 /* PauseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFA5FFE320EAD3C1001DB877 /* PauseView.xib */; };
+		DFA5FFE620EB7148001DB877 /* Google.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA5FFE520EB7148001DB877 /* Google.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A238EF22B91AE2ECCF08AED /* Pods_SimpleKnight.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleKnight.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		646E404FB047767120B9287D /* Pods-SimpleKnight.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleKnight.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleKnight/Pods-SimpleKnight.release.xcconfig"; sourceTree = "<group>"; };
 		DFA5FFAB20E7A52D001DB877 /* SimpleKnight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleKnight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFA5FFAE20E7A52D001DB877 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFA5FFB020E7A52D001DB877 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +58,8 @@
 		DFA5FFDD20EACD61001DB877 /* RulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesViewController.swift; sourceTree = "<group>"; };
 		DFA5FFE120EAD3B8001DB877 /* PauseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseView.swift; sourceTree = "<group>"; };
 		DFA5FFE320EAD3C1001DB877 /* PauseView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PauseView.xib; sourceTree = "<group>"; };
+		DFA5FFE520EB7148001DB877 /* Google.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Google.swift; sourceTree = "<group>"; };
+		E918107A6848BD6220676449 /* Pods-SimpleKnight.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleKnight.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleKnight/Pods-SimpleKnight.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,17 +67,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A666588397601C0DA5A8E94A /* Pods_SimpleKnight.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		71E2512C5D5083B02197A324 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E918107A6848BD6220676449 /* Pods-SimpleKnight.debug.xcconfig */,
+				646E404FB047767120B9287D /* Pods-SimpleKnight.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B647EE132BE57F340A0D4F47 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5A238EF22B91AE2ECCF08AED /* Pods_SimpleKnight.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DFA5FFA220E7A52D001DB877 = {
 			isa = PBXGroup;
 			children = (
 				DFA5FFAD20E7A52D001DB877 /* SimpleKnight */,
 				DFA5FFAC20E7A52D001DB877 /* Products */,
+				71E2512C5D5083B02197A324 /* Pods */,
+				B647EE132BE57F340A0D4F47 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,6 +115,7 @@
 				DFA5FFAE20E7A52D001DB877 /* AppDelegate.swift */,
 				DFA5FFB020E7A52D001DB877 /* StartViewController.swift */,
 				DFA5FFDD20EACD61001DB877 /* RulesViewController.swift */,
+				DFA5FFE520EB7148001DB877 /* Google.swift */,
 				DFA5FFD420E8ED61001DB877 /* GameDelegate.swift */,
 				DFA5FFC220E7A697001DB877 /* FieldView.swift */,
 				DFA5FFC820E7F733001DB877 /* Knight.swift */,
@@ -143,6 +170,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DFA5FFBD20E7A52E001DB877 /* Build configuration list for PBXNativeTarget "SimpleKnight" */;
 			buildPhases = (
+				B9EFF64DD737B0168F7D0F4E /* [CP] Check Pods Manifest.lock */,
 				DFA5FFA720E7A52D001DB877 /* Sources */,
 				DFA5FFA820E7A52D001DB877 /* Frameworks */,
 				DFA5FFA920E7A52D001DB877 /* Resources */,
@@ -204,6 +232,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B9EFF64DD737B0168F7D0F4E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SimpleKnight-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DFA5FFA720E7A52D001DB877 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -218,6 +267,7 @@
 				DFA5FFD220E811B3001DB877 /* CollectGame.swift in Sources */,
 				DFA5FFD020E811A2001DB877 /* CollectFieldView.swift in Sources */,
 				DFA5FFD520E8ED61001DB877 /* GameDelegate.swift in Sources */,
+				DFA5FFE620EB7148001DB877 /* Google.swift in Sources */,
 				DFA5FFC320E7A697001DB877 /* FieldView.swift in Sources */,
 				DFA5FFC120E7A67A001DB877 /* ClassicGameViewController.swift in Sources */,
 				DFA5FFDE20EACD61001DB877 /* RulesViewController.swift in Sources */,
@@ -366,6 +416,7 @@
 		};
 		DFA5FFBE20E7A52E001DB877 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E918107A6848BD6220676449 /* Pods-SimpleKnight.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -384,6 +435,7 @@
 		};
 		DFA5FFBF20E7A52E001DB877 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 646E404FB047767120B9287D /* Pods-SimpleKnight.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
