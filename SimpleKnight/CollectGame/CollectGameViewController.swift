@@ -24,6 +24,7 @@ class CollectGameViewController: UIViewController, GameDelegate, FinishViewDeleg
         scoreLabel.layer.masksToBounds = true
         timeLabel.layer.cornerRadius = 8.0
         scoreLabel.layer.cornerRadius = 8.0
+        scoreLabel.adjustsFontSizeToFitWidth = true;
         startGame()
     }
     

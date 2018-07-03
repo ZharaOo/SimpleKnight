@@ -25,6 +25,7 @@ class ClassicGameViewController: UIViewController, GameDelegate, FinishViewDeleg
         scoreLabel.layer.masksToBounds = true
         movesLabel.layer.cornerRadius = 8.0
         scoreLabel.layer.cornerRadius = 8.0
+        scoreLabel.adjustsFontSizeToFitWidth = true;
         startGame()
     }
     
