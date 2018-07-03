@@ -115,13 +115,11 @@
 				DFA5FFAE20E7A52D001DB877 /* AppDelegate.swift */,
 				DFA5FFB020E7A52D001DB877 /* StartViewController.swift */,
 				DFA5FFDD20EACD61001DB877 /* RulesViewController.swift */,
-				DFA5FFE520EB7148001DB877 /* Google.swift */,
 				DFA5FFD420E8ED61001DB877 /* GameDelegate.swift */,
-				DFA5FFC220E7A697001DB877 /* FieldView.swift */,
+				DFA5FFE520EB7148001DB877 /* Google.swift */,
 				DFA5FFC820E7F733001DB877 /* Knight.swift */,
 				DFA5FFCA20E804FB001DB877 /* Score.swift */,
-				DFA5FFDB20EAA92D001DB877 /* RulesView.swift */,
-				DFA5FFDA20E8FF69001DB877 /* Finish&Pause */,
+				DFA5FFDA20E8FF69001DB877 /* Views */,
 				DFA5FFD320E811BD001DB877 /* CollectGame */,
 				DFA5FFCC20E81162001DB877 /* ClassicGame */,
 				DFA5FFB220E7A52D001DB877 /* Main.storyboard */,
@@ -152,15 +150,17 @@
 			path = CollectGame;
 			sourceTree = "<group>";
 		};
-		DFA5FFDA20E8FF69001DB877 /* Finish&Pause */ = {
+		DFA5FFDA20E8FF69001DB877 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				DFA5FFD820E8FF60001DB877 /* FinishView.swift */,
 				DFA5FFD620E8FE84001DB877 /* FinishView.xib */,
 				DFA5FFE120EAD3B8001DB877 /* PauseView.swift */,
 				DFA5FFE320EAD3C1001DB877 /* PauseView.xib */,
+				DFA5FFDB20EAA92D001DB877 /* RulesView.swift */,
+				DFA5FFC220E7A697001DB877 /* FieldView.swift */,
 			);
-			path = "Finish&Pause";
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
