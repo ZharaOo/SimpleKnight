@@ -34,6 +34,16 @@ class ClassicGame: NSObject, FieldViewDelegate {
     }
     
     func finish() {
-        delegate!.finishGame()
+        delegate.finishGame(bestScore: writeBestScore())
+    }
+    
+    func writeBestScore() -> Int {
+        let ud = UserDefaults.standard
+        
+        if ud.integer(forKey: "ClassicBestScore") < score {
+            ud.set(score, forKey: "ClassicBestScore")
+        }
+        
+        return ud.integer(forKey: "ClassicBestScore")
     }
 }

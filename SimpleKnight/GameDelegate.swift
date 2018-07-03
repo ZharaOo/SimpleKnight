@@ -9,6 +9,6 @@
 import Foundation
 
 protocol GameDelegate: class {
-    func finishGame()
+    func finishGame(bestScore: Int)
     func updateLabels()
 }

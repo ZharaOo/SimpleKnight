@@ -93,9 +93,9 @@ class CollectGameViewController: UIViewController, GameDelegate, FinishViewDeleg
         interstitial = nil
     }
     
-    func finishGame() {
+    func finishGame(bestScore: Int) {
         UIView.animate(withDuration: 1.0, animations: { self.field.hideKnight() }, completion: { complete in
-            let finishView = FinishView.instanceFromNib(score: self.game.score, bestScore: 0)
+            let finishView = FinishView.instanceFromNib(score: self.game.score, bestScore: bestScore)
             finishView.delegate = self
             self.view.addSubview(finishView)
             self.interstitial = self.createAndLoadInterstitial(id: Google.collectAdID)
