@@ -186,6 +186,9 @@
                                             <constraint firstAttribute="width" secondItem="Y2v-9Q-9RO" secondAttribute="height" multiplier="1:1" id="QSq-Ii-Dk5"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="PauseImage"/>
+                                        <connections>
+                                            <action selector="pauseGame:" destination="gMj-3Z-tkm" eventType="touchUpInside" id="f6w-Tg-6Kq"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -258,6 +261,9 @@
                                             <constraint firstAttribute="width" secondItem="oKF-Ic-Uhf" secondAttribute="height" multiplier="1:1" id="12Q-q5-EAG"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="PauseImage"/>
+                                        <connections>
+                                            <action selector="pauseGame:" destination="yuf-sT-0vu" eventType="touchUpInside" id="ipO-8v-Z8t"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

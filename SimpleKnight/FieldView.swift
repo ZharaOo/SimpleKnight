@@ -95,5 +95,14 @@ class FieldView: UIView {
         buttons[Int(figure.location.x * 8 + figure.location.y)].alpha = 0.0
     }
     
+    func clearField() {
+        buttons.forEach() {button in
+            button.occupied = false
+            button.setBackgroundImage(UIImage(), for: .normal)
+        }
+        
+        figure = Knight()
+    }
+    
     @objc @IBAction internal func buttonPressed(_ sender: CellButton) {}
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CollectGameViewController: UIViewController, GameDelegate, FinishViewDelegate {
+class CollectGameViewController: UIViewController, GameDelegate, FinishViewDelegate, PauseViewDelegate {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var field: CollectFieldView!
@@ -54,8 +54,26 @@ class CollectGameViewController: UIViewController, GameDelegate, FinishViewDeleg
         }
     }
     
+    @IBAction func pauseGame(_ sender: Any) {
+        game.stopTimer()
+        let pauseView = PauseView.instanceFromNib(score: self.game.score, bestScore: 0)
+        pauseView.delegate = self
+        self.view.addSubview(pauseView)
+        pauseView.show()
+    }
+    
     func goToMainMenu() {
         navigationController?.popToRootViewController(animated: true)
+    }
+    
+    func resumeGame() {
+        game.startTimer()
+    }
+    
+    func playAgainGame() {
+        game.stopTimer()
+        field.clearField()
+        startGame()
     }
     
     func finishGame() {

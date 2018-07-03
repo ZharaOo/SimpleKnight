@@ -20,7 +20,10 @@ class CollectFieldView: FieldView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
+        startPlace()
+    }
+    
+    func startPlace() {
         figure = Knight(location: CGPoint(x: 0, y: 0))
         buttons[CellButton.indexOf(figure.location)].occupied = true
         buttons[CellButton.indexOf(figure.location)].setBackgroundImage(UIImage(named: "KnightImage"), for: .normal)
@@ -101,5 +104,12 @@ class CollectFieldView: FieldView {
         
         buttons[CellButton.indexOf(collectPoint)].setBackgroundImage(UIImage(), for: .normal)
         buttons[CellButton.indexOf(collectPoint)].occupied = false
+    }
+    
+    override func clearField() {
+        super.clearField()
+        enemies = []
+        collectPoint = CGPoint(x: 7, y: 7)
+        startPlace()
     }
 }

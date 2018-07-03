@@ -26,6 +26,8 @@
 		DFA5FFD920E8FF60001DB877 /* FinishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA5FFD820E8FF60001DB877 /* FinishView.swift */; };
 		DFA5FFDC20EAA92D001DB877 /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA5FFDB20EAA92D001DB877 /* RulesView.swift */; };
 		DFA5FFDE20EACD61001DB877 /* RulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA5FFDD20EACD61001DB877 /* RulesViewController.swift */; };
+		DFA5FFE220EAD3B8001DB877 /* PauseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA5FFE120EAD3B8001DB877 /* PauseView.swift */; };
+		DFA5FFE420EAD3C1001DB877 /* PauseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFA5FFE320EAD3C1001DB877 /* PauseView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		DFA5FFD820E8FF60001DB877 /* FinishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishView.swift; sourceTree = "<group>"; };
 		DFA5FFDB20EAA92D001DB877 /* RulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesView.swift; sourceTree = "<group>"; };
 		DFA5FFDD20EACD61001DB877 /* RulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesViewController.swift; sourceTree = "<group>"; };
+		DFA5FFE120EAD3B8001DB877 /* PauseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseView.swift; sourceTree = "<group>"; };
+		DFA5FFE320EAD3C1001DB877 /* PauseView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PauseView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +130,8 @@
 			children = (
 				DFA5FFD820E8FF60001DB877 /* FinishView.swift */,
 				DFA5FFD620E8FE84001DB877 /* FinishView.xib */,
+				DFA5FFE120EAD3B8001DB877 /* PauseView.swift */,
+				DFA5FFE320EAD3C1001DB877 /* PauseView.xib */,
 			);
 			path = "Finish&Pause";
 			sourceTree = "<group>";
@@ -191,6 +197,7 @@
 				DFA5FFB920E7A52E001DB877 /* LaunchScreen.storyboard in Resources */,
 				DFA5FFB620E7A52E001DB877 /* Assets.xcassets in Resources */,
 				DFA5FFB420E7A52D001DB877 /* Main.storyboard in Resources */,
+				DFA5FFE420EAD3C1001DB877 /* PauseView.xib in Resources */,
 				DFA5FFD720E8FE84001DB877 /* FinishView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -205,6 +212,7 @@
 				DFA5FFDC20EAA92D001DB877 /* RulesView.swift in Sources */,
 				DFA5FFB120E7A52D001DB877 /* StartViewController.swift in Sources */,
 				DFA5FFC520E7B87C001DB877 /* ClassicGame.swift in Sources */,
+				DFA5FFE220EAD3B8001DB877 /* PauseView.swift in Sources */,
 				DFA5FFCB20E804FB001DB877 /* Score.swift in Sources */,
 				DFA5FFCE20E81183001DB877 /* CollectGameViewController.swift in Sources */,
 				DFA5FFD220E811B3001DB877 /* CollectGame.swift in Sources */,

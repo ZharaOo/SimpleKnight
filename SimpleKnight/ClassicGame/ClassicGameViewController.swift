@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ClassicGameViewController: UIViewController, GameDelegate, FinishViewDelegate {
+class ClassicGameViewController: UIViewController, GameDelegate, FinishViewDelegate, PauseViewDelegate {
 
     @IBOutlet weak var field: ClassicFieldView!
     @IBOutlet weak var movesLabel: UILabel!
@@ -60,8 +60,24 @@ class ClassicGameViewController: UIViewController, GameDelegate, FinishViewDeleg
         }
     }
     
+    @IBAction func pauseGame(_ sender: Any) {
+        let pauseView = PauseView.instanceFromNib(score: self.game.score, bestScore: 0)
+        pauseView.delegate = self
+        self.view.addSubview(pauseView)
+        pauseView.show()
+    }
+    
     func goToMainMenu() {
         navigationController?.popToRootViewController(animated: true)
+    }
+    
+    func resumeGame() {
+        
+    }
+    
+    func playAgainGame() {
+        field.clearField()
+        startGame()
     }
     
     func finishGame() {

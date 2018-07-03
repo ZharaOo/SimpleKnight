@@ -22,7 +22,7 @@ class CollectGame: NSObject, ClassicFieldViewDelegate {
         
         super.init()
         self.field.delegate = self
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerTick), userInfo: nil, repeats: true)
+        startTimer()
     }
     
     @objc func timerTick() {
@@ -45,8 +45,16 @@ class CollectGame: NSObject, ClassicFieldViewDelegate {
         }
     }
     
-    func finish() {
+    func startTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerTick), userInfo: nil, repeats: true)
+    }
+    
+    func stopTimer() {
         timer.invalidate()
+    }
+    
+    func finish() {
+        stopTimer()
         delegate.finishGame()
     }
 }
