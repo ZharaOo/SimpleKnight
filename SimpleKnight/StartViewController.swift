@@ -22,7 +22,9 @@ class StartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if UserDefaults.standard.bool(forKey: "CollectRulesShown") || UserDefaults.standard.bool(forKey: "CollectRulesShown") {
-            SKStoreReviewController.requestReview()
+            if #available(iOS 10.3, *) {
+                SKStoreReviewController.requestReview()
+            }
         }
     }
 }
