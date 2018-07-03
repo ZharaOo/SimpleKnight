@@ -191,6 +191,9 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="BXn-y4-V29" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="By2-xR-H1g" secondAttribute="trailing" constant="4" id="9zu-PK-Ete"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.82352941180000006" green="0.74509803919999995" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -266,6 +269,9 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="RX9-qS-18F" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZYd-00-wfR" secondAttribute="trailing" constant="4" id="3e3-SD-507"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.82352941180000006" green="0.74509803919999995" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
