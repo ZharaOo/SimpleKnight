@@ -13,7 +13,7 @@ class CollectGame: NSObject, ClassicFieldViewDelegate {
     weak var delegate: GameDelegate!
     
     var score = 0
-    var time = 5
+    var time = 25
     
     private var timer: Timer!
     
