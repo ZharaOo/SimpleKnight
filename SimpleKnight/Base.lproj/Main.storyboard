@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rje-qK-Jed">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -16,11 +16,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="StartViewController" customModule="SimpleKnight" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Simple Knight" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCE-Xf-stx">
-                                <rect key="frame" x="31" y="52" width="258" height="97"/>
+                                <rect key="frame" x="31" y="52" width="352" height="97"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="97" id="uYg-U2-DLr"/>
                                 </constraints>
@@ -29,7 +29,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P1O-ez-chm" customClass="MenuButton" customModule="SimpleKnight" customModuleProvider="target">
-                                <rect key="frame" x="166" y="400" width="138" height="70"/>
+                                <rect key="frame" x="252" y="535" width="138" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Collect mode"/>
                                 <connections>
@@ -37,7 +37,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4cM-vb-spz" customClass="MenuButton" customModule="SimpleKnight" customModuleProvider="target">
-                                <rect key="frame" x="16" y="400" width="138" height="70"/>
+                                <rect key="frame" x="24" y="535" width="138" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Classic mode"/>
                                 <connections>
@@ -45,7 +45,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nel-MA-abZ">
-                                <rect key="frame" x="264" y="508" width="40" height="40"/>
+                                <rect key="frame" x="358" y="676" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <state key="normal" backgroundImage="RulesImage"/>
                                 <connections>
@@ -53,10 +53,30 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoImage" translatesAutoresizingMaskIntoConstraints="NO" id="BZA-F5-GyH">
-                                <rect key="frame" x="85" y="184" width="150" height="150"/>
+                                <rect key="frame" x="85" y="184" width="244" height="244"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="244" id="2XQ-M8-nEg">
+                                        <variation key="heightClass=regular" constant="400"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="8Y5-8z-KV2"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="Nd2-Mp-cI8"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="244" id="a1v-Ev-BL4">
+                                        <variation key="heightClass=regular" constant="400"/>
+                                    </constraint>
                                     <constraint firstAttribute="width" secondItem="BZA-F5-GyH" secondAttribute="height" multiplier="1:1" id="hQF-7y-Nk9"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="2XQ-M8-nEg"/>
+                                        <exclude reference="a1v-Ev-BL4"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="2XQ-M8-nEg"/>
+                                        <include reference="a1v-Ev-BL4"/>
+                                    </mask>
+                                </variation>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.82352941180000006" green="0.74509803919999995" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -66,8 +86,8 @@
                                 <variation key="heightClass=regular-widthClass=compact" constant="35"/>
                             </constraint>
                             <constraint firstItem="tCE-Xf-stx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="QpQ-Mg-W3x"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BZA-F5-GyH" secondAttribute="trailing" constant="85" id="bjG-0Y-9sg"/>
-                            <constraint firstItem="BZA-F5-GyH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="85" id="sU5-Q7-YBw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BZA-F5-GyH" secondAttribute="trailing" priority="999" constant="85" id="bjG-0Y-9sg"/>
+                            <constraint firstItem="BZA-F5-GyH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" priority="999" constant="85" id="sU5-Q7-YBw"/>
                             <constraint firstItem="BZA-F5-GyH" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="t4G-Wf-whc"/>
                             <constraint firstItem="tCE-Xf-stx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="31" id="vUk-dv-TTB"/>
                         </constraints>
@@ -84,26 +104,26 @@
             <objects>
                 <viewController id="Imc-7l-MkO" customClass="RulesViewController" customModule="SimpleKnight" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pgq-UL-KOQ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OtV-NO-5xg">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RST-L9-cON">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="123.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="102"/>
                                         <string key="text">Click on a cell to place a chip and start the game. Now make a move, clicking on that cell in which you want to come. You can only make moves like a chess knight.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HlH-a3-Opv">
-                                        <rect key="frame" x="0.0" y="303.5" width="320" height="188"/>
+                                        <rect key="frame" x="0.0" y="376" width="414" height="166.66666666666663"/>
                                         <string key="text">In classic mode your goal is to visit every cell in the field. The shorter is the time for which you do, the more is you score. Fill all cells to expand this game mode.  In collect mode your goal is to collect as many blue chips as you can.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RulesMoveImage" translatesAutoresizingMaskIntoConstraints="NO" id="76e-Xg-iSY">
-                                        <rect key="frame" x="78" y="131.5" width="164" height="164"/>
+                                        <rect key="frame" x="78" y="110" width="258" height="258"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="76e-Xg-iSY" secondAttribute="height" multiplier="1:1" id="Dg3-Tt-PGE"/>
                                         </constraints>
@@ -146,18 +166,18 @@
             <objects>
                 <viewController id="gMj-3Z-tkm" customClass="CollectGameViewController" customModule="SimpleKnight" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MSX-b3-4FX">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b8R-fU-saB" customClass="CollectFieldView" customModule="SimpleKnight" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="134" width="320" height="320"/>
+                                <rect key="frame" x="0.0" y="171" width="414" height="414"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="b8R-fU-saB" secondAttribute="height" multiplier="1:1" id="Ixx-be-lqX"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="UWp-vs-low">
-                                <rect key="frame" x="16" y="64" width="288" height="37"/>
+                                <rect key="frame" x="16" y="64" width="382" height="37"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: %d" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="By2-xR-H1g">
                                         <rect key="frame" x="0.0" y="0.0" width="105" height="37"/>
@@ -171,7 +191,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time: 64" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BXn-y4-V29">
-                                        <rect key="frame" x="109" y="0.0" width="105" height="37"/>
+                                        <rect key="frame" x="155.66666666666666" y="0.0" width="104.99999999999997" height="37"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="105" id="B2v-yL-Fq9"/>
@@ -181,7 +201,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2v-9Q-9RO">
-                                        <rect key="frame" x="251" y="0.0" width="37" height="37"/>
+                                        <rect key="frame" x="345" y="0.0" width="37" height="37"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Y2v-9Q-9RO" secondAttribute="height" multiplier="1:1" id="QSq-Ii-Dk5"/>
                                         </constraints>
@@ -224,18 +244,18 @@
             <objects>
                 <viewController id="yuf-sT-0vu" customClass="ClassicGameViewController" customModule="SimpleKnight" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qte-bO-ukE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cVL-8C-DwW" customClass="ClassicFieldView" customModule="SimpleKnight" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="134" width="320" height="320"/>
+                                <rect key="frame" x="0.0" y="171" width="414" height="414"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="cVL-8C-DwW" secondAttribute="height" multiplier="1:1" id="tZO-ZH-z4H"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="huN-Za-Tvz">
-                                <rect key="frame" x="16" y="64" width="288" height="37"/>
+                                <rect key="frame" x="16" y="64" width="382" height="37"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moves: %d" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYd-00-wfR">
                                         <rect key="frame" x="0.0" y="0.0" width="105" height="37"/>
@@ -249,7 +269,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: %d" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RX9-qS-18F">
-                                        <rect key="frame" x="125.5" y="0.0" width="105" height="37"/>
+                                        <rect key="frame" x="172.66666666666666" y="0.0" width="104.99999999999997" height="37"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="105" id="eIQ-uy-fdf"/>
@@ -259,7 +279,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oKF-Ic-Uhf">
-                                        <rect key="frame" x="251" y="0.0" width="37" height="37"/>
+                                        <rect key="frame" x="345" y="0.0" width="37" height="37"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="oKF-Ic-Uhf" secondAttribute="height" multiplier="1:1" id="12Q-q5-EAG"/>
                                         </constraints>
