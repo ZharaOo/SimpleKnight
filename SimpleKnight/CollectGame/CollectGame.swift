@@ -35,7 +35,7 @@ class CollectGame: NSObject, ClassicFieldViewDelegate {
     
     func moveMade(score: Int, collected: Bool) {
         if collected {
-            time += 2
+            time += 1
         }
         self.score += score
         delegate.updateLabels()
