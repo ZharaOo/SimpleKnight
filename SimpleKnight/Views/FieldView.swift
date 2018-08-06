@@ -49,6 +49,10 @@ class FieldView: UIView {
     var interactionAllowed = true
     var figure = Knight()
     
+    var cornerPassed: Bool {
+        return buttons[CellButton.indexOf(CGPoint(x: 0, y: 7))].occupied && buttons[CellButton.indexOf(CGPoint(x: 7, y: 7))].occupied && buttons[CellButton.indexOf(CGPoint(x: 7, y: 0))].occupied && buttons[CellButton.indexOf(CGPoint(x: 0, y: 0))].occupied
+    }
+    
     override func layoutSubviews() {
         if !initialized {
             createButtons()

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A666588397601C0DA5A8E94A /* Pods_SimpleKnight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A238EF22B91AE2ECCF08AED /* Pods_SimpleKnight.framework */; };
+		DF4D014E2118E89000AA1249 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF4D014D2118E89000AA1249 /* GameKit.framework */; };
 		DFA5FFAF20E7A52D001DB877 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA5FFAE20E7A52D001DB877 /* AppDelegate.swift */; };
 		DFA5FFB120E7A52D001DB877 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA5FFB020E7A52D001DB877 /* StartViewController.swift */; };
 		DFA5FFB420E7A52D001DB877 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFA5FFB220E7A52D001DB877 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		5A238EF22B91AE2ECCF08AED /* Pods_SimpleKnight.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleKnight.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		646E404FB047767120B9287D /* Pods-SimpleKnight.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleKnight.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleKnight/Pods-SimpleKnight.release.xcconfig"; sourceTree = "<group>"; };
+		DF4D014D2118E89000AA1249 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		DFA5FFAB20E7A52D001DB877 /* SimpleKnight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleKnight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFA5FFAE20E7A52D001DB877 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFA5FFB020E7A52D001DB877 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF4D014E2118E89000AA1249 /* GameKit.framework in Frameworks */,
 				A666588397601C0DA5A8E94A /* Pods_SimpleKnight.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -86,6 +89,7 @@
 		B647EE132BE57F340A0D4F47 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DF4D014D2118E89000AA1249 /* GameKit.framework */,
 				5A238EF22B91AE2ECCF08AED /* Pods_SimpleKnight.framework */,
 			);
 			name = Frameworks;

@@ -78,6 +78,14 @@
                                     </mask>
                                 </variation>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4TP-Mr-1nT">
+                                <rect key="frame" x="298" y="676" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <state key="normal" backgroundImage="gcIcon"/>
+                                <connections>
+                                    <action selector="showLeaderboard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fJQ-r6-yXx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.82352941180000006" green="0.74509803919999995" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -341,5 +349,6 @@
         <image name="PauseImage" width="40" height="40"/>
         <image name="RulesImage" width="40" height="40"/>
         <image name="RulesMoveImage" width="502" height="500"/>
+        <image name="gcIcon" width="256" height="256"/>
     </resources>
 </document>

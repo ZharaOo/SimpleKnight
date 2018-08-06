@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleMobileAds
+import GameKit
 
 class ClassicGameViewController: UIViewController, GameDelegate, FinishViewDelegate, PauseViewDelegate, GADInterstitialDelegate {
 
@@ -47,6 +48,12 @@ class ClassicGameViewController: UIViewController, GameDelegate, FinishViewDeleg
     func updateLabels() {
         movesLabel.text = "Moves: \(game!.moves)"
         scoreLabel.text = "Score: \(game!.score)"
+        
+        checkMovesAchievements(moves: game.moves)
+        
+        if field.cornerPassed {
+            configureAndPostAchievement(id: "fa_corner")
+        }
         
         if !UserDefaults.standard.bool(forKey: "ClassicRulesShown") {
             switch game!.moves {
@@ -105,5 +112,60 @@ class ClassicGameViewController: UIViewController, GameDelegate, FinishViewDeleg
             self.view.addSubview(finishView)
             self.interstitial = self.createAndLoadInterstitial(id: Google.classicAdID)
         })
+        
+        reportTimeToGameCenter(score: game.score)
+        configureAndPostAchievement(id: "fbeginner")
     }
+    
+    
+    //MARK: - Game Center methods
+    
+    
+    func reportTimeToGameCenter(score: Int) {
+        let leaderboardID = "down_scores_classic"
+        let sScore = GKScore(leaderboardIdentifier: leaderboardID)
+        sScore.value = Int64(score)
+        
+        GKScore.report([sScore], withCompletionHandler: { error in
+            if error != nil {
+                print(error!.localizedDescription)
+            }
+            else {
+                print("Score submitted")
+            }
+        })
+    }
+    
+    func configureAndPostAchievement(id: String) {
+        let achievement = GKAchievement(identifier: id)
+        achievement.percentComplete = 100.0
+        achievement.showsCompletionBanner = true
+        
+        GKAchievement.report([achievement]) { error in
+            if error != nil {
+                print(error!.localizedDescription)
+            }
+            else {
+                print("Score submitted")
+            }
+        }
+    }
+    
+    func checkMovesAchievements(moves: Int) {
+        switch moves {
+        case 64 / 16:
+            configureAndPostAchievement(id: "fpole1_16")
+        case 64 / 8:
+            configureAndPostAchievement(id: "fpole1_8")
+        case 64 / 4:
+            configureAndPostAchievement(id: "fpole1_4")
+        case 64 / 2:
+            configureAndPostAchievement(id: "fpole1_2")
+        case 64:
+            configureAndPostAchievement(id: "fpole1_1")
+        default:
+            break
+        }
+    }
+    
 }

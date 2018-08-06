@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleMobileAds
+import GameKit
 
 class CollectGameViewController: UIViewController, GameDelegate, FinishViewDelegate, PauseViewDelegate, GADInterstitialDelegate {
     @IBOutlet weak var scoreLabel: UILabel!
@@ -45,6 +46,8 @@ class CollectGameViewController: UIViewController, GameDelegate, FinishViewDeleg
     func updateLabels() {
         timeLabel.text = "Time: \(game.time)"
         scoreLabel.text = "Score: \(game.score)"
+        
+        checkChipsAchievements(collectedChips: game.chips)
         
         if !UserDefaults.standard.bool(forKey: "CollectRulesShown") {
             switch game!.score {
@@ -101,5 +104,66 @@ class CollectGameViewController: UIViewController, GameDelegate, FinishViewDeleg
             self.view.addSubview(finishView)
             self.interstitial = self.createAndLoadInterstitial(id: Google.collectAdID)
         })
+        
+        reportTimeToGameCenter(score: game.score)
+        configureAndPostAchievement(id: "fbeginner")
     }
+    
+    
+    //MARK: - Game Center methods
+    
+    
+    func reportTimeToGameCenter(score: Int) {
+        let leaderboardID = "down_scores_challenge"
+        let sScore = GKScore(leaderboardIdentifier: leaderboardID)
+        sScore.value = Int64(score)
+        
+        GKScore.report([sScore], withCompletionHandler: { error in
+            if error != nil {
+                print(error!.localizedDescription)
+            }
+            else {
+                print("Score submitted")
+            }
+        })
+    }
+    
+    func configureAndPostAchievement(id: String) {
+        let achievement = GKAchievement(identifier: id)
+        achievement.percentComplete = 100.0
+        achievement.showsCompletionBanner = true
+        
+        GKAchievement.report([achievement]) { error in
+            if error != nil {
+                print(error!.localizedDescription)
+            }
+            else {
+                print("Score submitted")
+            }
+        }
+    }
+    
+    func checkChipsAchievements(collectedChips: Int) {
+        switch collectedChips {
+        case 10:
+            configureAndPostAchievement(id: "10_chips")
+        case 15:
+            configureAndPostAchievement(id: "15_chips")
+        case 20:
+            configureAndPostAchievement(id: "20_chips")
+        case 25:
+            configureAndPostAchievement(id: "25_chips")
+        case 30:
+            configureAndPostAchievement(id: "30_chips")
+        case 35:
+            configureAndPostAchievement(id: "35_chips")
+        case 50:
+            configureAndPostAchievement(id: "50_chips")
+        case 70:
+            configureAndPostAchievement(id: "70_chips")
+        default:
+            break
+        }
+    }
+
 }
