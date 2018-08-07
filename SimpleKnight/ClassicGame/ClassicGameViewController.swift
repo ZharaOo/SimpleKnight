@@ -155,13 +155,13 @@ class ClassicGameViewController: UIViewController, GameDelegate, FinishViewDeleg
     
     func checkMovesAchievements(moves: Int) {
         switch moves {
-        case 64 / 16:
+        case 60:
             configureAndPostAchievement(id: "fpole1_16")
-        case 64 / 8:
+        case 61:
             configureAndPostAchievement(id: "fpole1_8")
-        case 64 / 4:
+        case 62:
             configureAndPostAchievement(id: "fpole1_4")
-        case 64 / 2:
+        case 63:
             configureAndPostAchievement(id: "fpole1_2")
         case 64:
             configureAndPostAchievement(id: "fpole1_1")
