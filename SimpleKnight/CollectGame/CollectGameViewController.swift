@@ -15,18 +15,29 @@ class CollectGameViewController: UIViewController, GameDelegate, FinishViewDeleg
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var field: CollectFieldView!
     
-    var game: CollectGame!
+    @objc var game: CollectGame!
     var rulesView: RulesView!
     var interstitial: GADInterstitial?
+    var observation: NSKeyValueObservation?
+    
+    deinit {
+        observation?.invalidate()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         timeLabel.layer.masksToBounds = true
         scoreLabel.layer.masksToBounds = true
         timeLabel.layer.cornerRadius = 8.0
         scoreLabel.layer.cornerRadius = 8.0
         scoreLabel.adjustsFontSizeToFitWidth = true;
+        
         startGame()
+        
+        observation = self.observe(\.game.chips) { (cgvc, change)  in
+            cgvc.checkChipsAchievements(collectedChips: cgvc.game.chips)
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -46,8 +57,6 @@ class CollectGameViewController: UIViewController, GameDelegate, FinishViewDeleg
     func updateLabels() {
         timeLabel.text = "Time: \(game.time)"
         scoreLabel.text = "Score: \(game.score)"
-        
-        checkChipsAchievements(collectedChips: game.chips)
         
         if !UserDefaults.standard.bool(forKey: "CollectRulesShown") {
             switch game!.score {

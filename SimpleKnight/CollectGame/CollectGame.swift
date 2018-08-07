@@ -14,7 +14,7 @@ class CollectGame: NSObject, ClassicFieldViewDelegate {
     
     var score = 0
     var time = 25
-    var chips = 0
+    @objc dynamic var chips = 0
     
     private var timer: Timer!
     

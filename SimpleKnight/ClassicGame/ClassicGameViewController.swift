@@ -19,6 +19,7 @@ class ClassicGameViewController: UIViewController, GameDelegate, FinishViewDeleg
     var game: ClassicGame!
     var rulesView: RulesView!
     var interstitial: GADInterstitial?
+    var allCornersVisited = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,8 +52,9 @@ class ClassicGameViewController: UIViewController, GameDelegate, FinishViewDeleg
         
         checkMovesAchievements(moves: game.moves)
         
-        if field.cornerPassed {
+        if field.cornerPassed && !allCornersVisited {
             configureAndPostAchievement(id: "fa_corner")
+            allCornersVisited = true
         }
         
         if !UserDefaults.standard.bool(forKey: "ClassicRulesShown") {
