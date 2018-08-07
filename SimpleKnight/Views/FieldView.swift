@@ -50,7 +50,12 @@ class FieldView: UIView {
     var figure = Knight()
     
     var cornerPassed: Bool {
-        return buttons[CellButton.indexOf(CGPoint(x: 0, y: 7))].occupied && buttons[CellButton.indexOf(CGPoint(x: 7, y: 7))].occupied && buttons[CellButton.indexOf(CGPoint(x: 7, y: 0))].occupied && buttons[CellButton.indexOf(CGPoint(x: 0, y: 0))].occupied
+        if buttons.count != 0 {
+            return buttons[CellButton.indexOf(CGPoint(x: 0, y: 7))].occupied && buttons[CellButton.indexOf(CGPoint(x: 7, y: 7))].occupied && buttons[CellButton.indexOf(CGPoint(x: 7, y: 0))].occupied && buttons[CellButton.indexOf(CGPoint(x: 0, y: 0))].occupied
+        }
+        else {
+            return false
+        }
     }
     
     override func layoutSubviews() {
