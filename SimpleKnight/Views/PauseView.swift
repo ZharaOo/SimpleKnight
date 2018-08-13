@@ -24,7 +24,10 @@ protocol PauseViewDelegate: FinishViewDelegate {
 class PauseView: UIView {
     weak var delegate: PauseViewDelegate!
     
-    class func instanceFromNib(score: Int, bestScore: Int) -> PauseView {
+    
+    // MARK: - Instance creation
+    
+    class func instanceFromNib() -> PauseView {
         let fv = UINib(nibName: "PauseView", bundle: nil).instantiate(withOwner: nil, options:nil)[0] as! PauseView
         fv.frame = CGRect(x: 0.0, y: 0.0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         fv.backgroundColor = UIColor.init(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.8)
@@ -32,13 +35,8 @@ class PauseView: UIView {
         return fv
     }
     
-    func show() {
-        UIView.animate(withDuration: 0.5, animations: { self.alpha = 1 })
-    }
-
-    func remove() {
-        UIView.animate(withDuration: 0.5, animations: { self.alpha = 0.0 }, completion: { completion in self.removeFromSuperview() })
-    }
+    
+    // MARK: - IBActions
     
     @IBAction func resume(_ sender: Any) {
         delegate.resumeGame()
@@ -53,4 +51,17 @@ class PauseView: UIView {
     @IBAction func mainMenu(_ sender: Any) {
         delegate.goToMainMenu()
     }
+    
+    
+    // MARK: - Show hide public methods
+    
+    func show() {
+        UIView.animate(withDuration: 0.5, animations: { self.alpha = 1 })
+    }
+
+    func remove() {
+        UIView.animate(withDuration: 0.5, animations: { self.alpha = 0.0 }, completion: { completion in self.removeFromSuperview() })
+    }
+    
+    
 }

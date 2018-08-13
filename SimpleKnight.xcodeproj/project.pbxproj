@@ -31,6 +31,7 @@
 		DFA5FFE220EAD3B8001DB877 /* PauseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA5FFE120EAD3B8001DB877 /* PauseView.swift */; };
 		DFA5FFE420EAD3C1001DB877 /* PauseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFA5FFE320EAD3C1001DB877 /* PauseView.xib */; };
 		DFA5FFE620EB7148001DB877 /* Google.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA5FFE520EB7148001DB877 /* Google.swift */; };
+		DFE164812121F711006168A3 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE164802121F711006168A3 /* GameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		DFA5FFE120EAD3B8001DB877 /* PauseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseView.swift; sourceTree = "<group>"; };
 		DFA5FFE320EAD3C1001DB877 /* PauseView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PauseView.xib; sourceTree = "<group>"; };
 		DFA5FFE520EB7148001DB877 /* Google.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Google.swift; sourceTree = "<group>"; };
+		DFE164802121F711006168A3 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		E918107A6848BD6220676449 /* Pods-SimpleKnight.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleKnight.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleKnight/Pods-SimpleKnight.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,13 +121,9 @@
 				DFA5FFAE20E7A52D001DB877 /* AppDelegate.swift */,
 				DFA5FFB020E7A52D001DB877 /* StartViewController.swift */,
 				DFA5FFDD20EACD61001DB877 /* RulesViewController.swift */,
-				DFA5FFD420E8ED61001DB877 /* GameDelegate.swift */,
 				DFA5FFE520EB7148001DB877 /* Google.swift */,
-				DFA5FFC820E7F733001DB877 /* Knight.swift */,
-				DFA5FFCA20E804FB001DB877 /* Score.swift */,
+				DFE1648221220317006168A3 /* Game */,
 				DFA5FFDA20E8FF69001DB877 /* Views */,
-				DFA5FFD320E811BD001DB877 /* CollectGame */,
-				DFA5FFCC20E81162001DB877 /* ClassicGame */,
 				DFA5FFB220E7A52D001DB877 /* Main.storyboard */,
 				DFA5FFB520E7A52E001DB877 /* Assets.xcassets */,
 				DFA5FFB720E7A52E001DB877 /* LaunchScreen.storyboard */,
@@ -165,6 +163,19 @@
 				DFA5FFC220E7A697001DB877 /* FieldView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		DFE1648221220317006168A3 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				DFA5FFD420E8ED61001DB877 /* GameDelegate.swift */,
+				DFA5FFC820E7F733001DB877 /* Knight.swift */,
+				DFA5FFCA20E804FB001DB877 /* Score.swift */,
+				DFE164802121F711006168A3 /* GameViewController.swift */,
+				DFA5FFD320E811BD001DB877 /* CollectGame */,
+				DFA5FFCC20E81162001DB877 /* ClassicGame */,
+			);
+			path = Game;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,6 +277,7 @@
 				DFA5FFB120E7A52D001DB877 /* StartViewController.swift in Sources */,
 				DFA5FFC520E7B87C001DB877 /* ClassicGame.swift in Sources */,
 				DFA5FFE220EAD3B8001DB877 /* PauseView.swift in Sources */,
+				DFE164812121F711006168A3 /* GameViewController.swift in Sources */,
 				DFA5FFCB20E804FB001DB877 /* Score.swift in Sources */,
 				DFA5FFCE20E81183001DB877 /* CollectGameViewController.swift in Sources */,
 				DFA5FFD220E811B3001DB877 /* CollectGame.swift in Sources */,

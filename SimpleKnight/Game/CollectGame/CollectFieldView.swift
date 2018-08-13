@@ -8,12 +8,12 @@
 
 import UIKit
 
-protocol ClassicFieldViewDelegate: class {
+protocol CollectFieldViewDelegate: class {
     func moveMade(score: Int, collected: Bool)
 }
 
 class CollectFieldView: FieldView {
-    weak var delegate: ClassicFieldViewDelegate!
+    weak var delegate: CollectFieldViewDelegate!
     
     var enemies = [CGPoint]()
     var collectPoint = CGPoint(x: 7, y: 7)

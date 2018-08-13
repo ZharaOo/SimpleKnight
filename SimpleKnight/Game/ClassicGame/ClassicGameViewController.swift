@@ -7,10 +7,9 @@
 //
 
 import UIKit
-import GoogleMobileAds
 import GameKit
 
-class ClassicGameViewController: UIViewController, GameDelegate, FinishViewDelegate, PauseViewDelegate, GADInterstitialDelegate {
+class ClassicGameViewController: GameViewController, GameDelegate {
 
     @IBOutlet weak var field: ClassicFieldView!
     @IBOutlet weak var movesLabel: UILabel!
@@ -18,8 +17,10 @@ class ClassicGameViewController: UIViewController, GameDelegate, FinishViewDeleg
     
     var game: ClassicGame!
     var rulesView: RulesView!
-    var interstitial: GADInterstitial?
     var allCornersVisited = false
+    
+    
+    // MARK: - lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,12 +40,15 @@ class ClassicGameViewController: UIViewController, GameDelegate, FinishViewDeleg
         }
     }
     
-    func startGame() {
-        game = ClassicGame(field: field)
-        game.delegate = self
-        
-        updateLabels()
+    
+    // MARK: - IBActions
+    
+    @IBAction func pauseGame(_ sender: Any) {
+        showPauseView()
     }
+    
+    
+    // MARK: - GameDelegate
     
     func updateLabels() {
         movesLabel.text = "Moves: \(game!.moves)"
@@ -72,86 +76,34 @@ class ClassicGameViewController: UIViewController, GameDelegate, FinishViewDeleg
         }
     }
     
-    @IBAction func pauseGame(_ sender: Any) {
-        let pauseView = PauseView.instanceFromNib(score: self.game.score, bestScore: 0)
-        pauseView.delegate = self
-        self.view.addSubview(pauseView)
-        pauseView.show()
-    }
-    
-    func goToMainMenu() {
-        navigationController?.popToRootViewController(animated: true)
-    }
-    
-    func resumeGame() {
-        
-    }
-    
-    func playAgainGame() {
-        field.clearField()
-        startGame()
-    }
-    
-    func createAndLoadInterstitial(id: String) -> GADInterstitial {
-        let interstitial = GADInterstitial(adUnitID: id)
-        interstitial.delegate = self
-        interstitial.load(GADRequest())
-        return interstitial
-    }
-    
-    func interstitialDidReceiveAd(_ ad: GADInterstitial) {
-        interstitial?.present(fromRootViewController: self)
-    }
-    
-    func interstitialWillDismissScreen(_ ad: GADInterstitial) {
-        interstitial = nil
-    }
-    
     func finishGame(bestScore: Int) {
         UIView.animate(withDuration: 1.0, animations: { self.field.hideKnight() }, completion: { complete in
-            let finishView = FinishView.instanceFromNib(score: self.game.score, bestScore: bestScore)
-            finishView.delegate = self
-            self.view.addSubview(finishView)
-            self.interstitial = self.createAndLoadInterstitial(id: Google.classicAdID)
+            self.showFinishView(score: self.game.score, bestScore: bestScore)
+            self.showAd()
         })
         
-        reportTimeToGameCenter(score: game.score)
+        reportTimeToGameCenter(score: game.score, leaderboardID: "down_scores_classic")
         configureAndPostAchievement(id: "fbeginner")
     }
     
     
+    // MARK: - Override PauseViewDelegate methods
+    
+    override func playAgainGame() {
+        field.clearField()
+        startGame()
+    }
+    
+    
+    // MARK: - Game methods
+    
+    func startGame() {
+        game = ClassicGame(field: field)
+        game.delegate = self
+        updateLabels()
+    }
+    
     //MARK: - Game Center methods
-    
-    
-    func reportTimeToGameCenter(score: Int) {
-        let leaderboardID = "down_scores_classic"
-        let sScore = GKScore(leaderboardIdentifier: leaderboardID)
-        sScore.value = Int64(score)
-        
-        GKScore.report([sScore], withCompletionHandler: { error in
-            if error != nil {
-                print(error!.localizedDescription)
-            }
-            else {
-                print("Score submitted")
-            }
-        })
-    }
-    
-    func configureAndPostAchievement(id: String) {
-        let achievement = GKAchievement(identifier: id)
-        achievement.percentComplete = 100.0
-        achievement.showsCompletionBanner = true
-        
-        GKAchievement.report([achievement]) { error in
-            if error != nil {
-                print(error!.localizedDescription)
-            }
-            else {
-                print("Score submitted")
-            }
-        }
-    }
     
     func checkMovesAchievements(moves: Int) {
         switch moves {

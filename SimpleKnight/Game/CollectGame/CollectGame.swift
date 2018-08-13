@@ -8,12 +8,12 @@
 
 import UIKit
 
-class CollectGame: NSObject, ClassicFieldViewDelegate {
+class CollectGame: NSObject, CollectFieldViewDelegate {
     weak var field: CollectFieldView!
     weak var delegate: GameDelegate!
     
     var score = 0
-    var time = 25
+    var time = 64
     @objc dynamic var chips = 0
     
     private var timer: Timer!
@@ -26,13 +26,8 @@ class CollectGame: NSObject, ClassicFieldViewDelegate {
         startTimer()
     }
     
-    @objc func timerTick() {
-        time -= 1
-        delegate.updateLabels()
-        if time == 0 {
-            finish()
-        }
-    }
+    
+    // MARK: - ClassicFieldViewDelegate
     
     func moveMade(score: Int, collected: Bool) {
         if collected {
@@ -48,13 +43,8 @@ class CollectGame: NSObject, ClassicFieldViewDelegate {
         }
     }
     
-    func startTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerTick), userInfo: nil, repeats: true)
-    }
     
-    func stopTimer() {
-        timer.invalidate()
-    }
+    // MARK: - Finish game methods
     
     func finish() {
         stopTimer()
@@ -69,5 +59,24 @@ class CollectGame: NSObject, ClassicFieldViewDelegate {
         }
         
         return ud.integer(forKey: "CollectBestScore")
+    }
+    
+    
+    // MARK: - Timer methods
+    
+    func startTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerTick), userInfo: nil, repeats: true)
+    }
+    
+    func stopTimer() {
+        timer.invalidate()
+    }
+    
+    @objc func timerTick() {
+        time -= 1
+        delegate.updateLabels()
+        if time == 0 {
+            finish()
+        }
     }
 }

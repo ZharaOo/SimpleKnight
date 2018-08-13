@@ -19,6 +19,8 @@ class MenuButton: UIButton {
 }
 
 class StartViewController: UIViewController, GKGameCenterControllerDelegate {
+    
+    // MARK: - lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
