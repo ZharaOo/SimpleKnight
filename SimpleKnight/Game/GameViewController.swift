@@ -61,7 +61,7 @@ class GameViewController: UIViewController, FinishViewDelegate, GADInterstitialD
     
     func showAd() {
         let gamesPlayed = UserDefaults.standard.integer(forKey: "GamesPlayed")
-        if gamesPlayed % 3 == 0 {
+        if gamesPlayed % 2 == 0 {
             self.interstitial = self.createAndLoadInterstitial(id: Google.classicAdID)
         }
         UserDefaults.standard.set(gamesPlayed + 1, forKey: "GamesPlayed")

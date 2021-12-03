@@ -16,6 +16,8 @@ class CollectGame: NSObject, CollectFieldViewDelegate {
     var time = 64
     @objc dynamic var chips = 0
     
+    private let ud = UserDefaults.standard
+    
     private var timer: Timer!
     
     init(field: CollectFieldView) {
@@ -52,8 +54,6 @@ class CollectGame: NSObject, CollectFieldViewDelegate {
     }
     
     func writeBestScore() -> Int {
-        let ud = UserDefaults.standard
-        
         if ud.integer(forKey: "CollectBestScore") < score {
             ud.set(score, forKey: "CollectBestScore")
         }

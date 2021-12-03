@@ -12,6 +12,8 @@ class ClassicGame: NSObject, FieldViewDelegate {
     weak var field: ClassicFieldView!
     weak var delegate: GameDelegate!
     
+    private let ud = UserDefaults.standard
+    
     var moves = 0
     var score = 0
     
@@ -38,8 +40,6 @@ class ClassicGame: NSObject, FieldViewDelegate {
     }
     
     func writeBestScore() -> Int {
-        let ud = UserDefaults.standard
-        
         if ud.integer(forKey: "ClassicBestScore") < score {
             ud.set(score, forKey: "ClassicBestScore")
         }
