@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -189,6 +189,7 @@
 				DFA5FFA720E7A52D001DB877 /* Sources */,
 				DFA5FFA820E7A52D001DB877 /* Frameworks */,
 				DFA5FFA920E7A52D001DB877 /* Resources */,
+				12F20083DDA39BB401D698FB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -211,6 +212,7 @@
 				TargetAttributes = {
 					DFA5FFAA20E7A52D001DB877 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1240;
 					};
 				};
 			};
@@ -248,6 +250,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		12F20083DDA39BB401D698FB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SimpleKnight/Pods-SimpleKnight-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SimpleKnight/Pods-SimpleKnight-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SimpleKnight/Pods-SimpleKnight-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B9EFF64DD737B0168F7D0F4E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -438,6 +457,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2.1.2.2;
 				DEVELOPMENT_TEAM = 6X84E35ZA8;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = SimpleKnight/Info.plist;
@@ -446,9 +466,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.babkin.xod-kon-pro";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -459,6 +480,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2.1.2.2;
 				DEVELOPMENT_TEAM = 6X84E35ZA8;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = SimpleKnight/Info.plist;
@@ -467,9 +489,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.babkin.xod-kon-pro";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

@@ -6,11 +6,11 @@
 //  Copyright © 2018 Ivan Babkin. All rights reserved.
 //
 
-import UIKit
+import AppTrackingTransparency
 import StoreKit
 import GameKit
 
-class MenuButton: UIButton {
+final class MenuButton: UIButton {
     override func draw(_ rect: CGRect) {
         self.layer.borderWidth = 1
         self.layer.borderColor = UIColor.black.cgColor
@@ -18,46 +18,49 @@ class MenuButton: UIButton {
     }
 }
 
-class StartViewController: UIViewController, GKGameCenterControllerDelegate {
+final class StartViewController: UIViewController, GKGameCenterControllerDelegate {
+    private let userDefaults = UserDefaults.standard
     
     // MARK: - lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         authenticateLocalPlayer()
-        if UserDefaults.standard.bool(forKey: "CollectRulesShown") || UserDefaults.standard.bool(forKey: "CollectRulesShown") {
-            if #available(iOS 10.3, *) {
+        requestADIDPermission()
+        if userDefaults.bool(forKey: "CollectRulesShown") || userDefaults.bool(forKey: "CollectRulesShown") {
                 SKStoreReviewController.requestReview()
-            }
         }
     }
-    
+
     @IBAction func showLeaderboard(_ sender: UIButton) {
-        let gcVC: GKGameCenterViewController = GKGameCenterViewController()
+        let gcVC = GKGameCenterViewController()
         gcVC.gameCenterDelegate = self
-        gcVC.viewState = GKGameCenterViewControllerState.default
-        self.present(gcVC, animated: true, completion: nil)
+        gcVC.viewState = .default
+        present(gcVC, animated: true)
     }
-    
     
     //MARK: - GKGameCenterControllerDelegate
     
-    
     func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
-        gameCenterViewController.dismiss(animated: true, completion: nil)
+        gameCenterViewController.dismiss(animated: true)
     }
     
     
     //MARK: - Game center methods
     
-    
-    func authenticateLocalPlayer() {
-        let localPlayer: GKLocalPlayer = GKLocalPlayer.localPlayer()
+    private func authenticateLocalPlayer() {
+        let localPlayer: GKLocalPlayer = GKLocalPlayer.local
         
-        localPlayer.authenticateHandler = { ViewController, error in
-            if ViewController != nil {
-                self.present(ViewController!, animated: true, completion: nil)
+        localPlayer.authenticateHandler = { [weak self] viewController, error in
+            if let viewController = viewController {
+                self?.present(viewController, animated: true)
             }
+        }
+    }
+    
+    private func requestADIDPermission() {
+        if #available(iOS 14, *) {
+            ATTrackingManager.requestTrackingAuthorization { _ in }
         }
     }
 }

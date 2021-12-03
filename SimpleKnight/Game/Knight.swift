@@ -22,7 +22,7 @@ class Knight: NSObject {
             return true
         }
         
-        let l = CGPoint(x: fabs(self.location.x - location.x), y: fabs(self.location.y - location.y))
+        let l = CGPoint(x: abs(self.location.x - location.x), y: abs(self.location.y - location.y))
         
         if (l.x == 2 && l.y == 1) || (l.x == 1 && l.y == 2) {
             return true
